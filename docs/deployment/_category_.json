@@ -1,0 +1,8 @@
+{
+  "label": "Deployment",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Deployment processes, infrastructure setup, monitoring, and DevOps practices."
+  }
+}

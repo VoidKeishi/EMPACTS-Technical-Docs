@@ -1,0 +1,8 @@
+{
+  "label": "Development",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Development guidelines, coding standards, testing strategies, and best practices."
+  }
+}

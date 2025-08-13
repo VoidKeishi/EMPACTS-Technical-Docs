@@ -1,30 +1,455 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * EMPACTS Technical Documentation CSS
+ * Based on EMPACTS Design Guidelines
  */
 
-/* You can override the default Infima variables here. */
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* EMPACTS Design System Variables */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  /* Colors */
+  --empacts-primary: #9200FE;
+  --empacts-white: #FFFFFF;
+  --empacts-bg-gray: #F3F4F6;
+  --empacts-input-border: #E4E5E8;
+  --empacts-text-primary: #222222;
+  --empacts-text-secondary: #666666;
+  
+  /* Typography */
+  --empacts-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --empacts-heading-weight: 700;
+  --empacts-body-weight: 400;
+  --empacts-button-weight: 600;
+  
+  /* Spacing */
+  --empacts-form-gap: 16px;
+  --empacts-section-padding: 32px;
+  --empacts-button-padding-v: 14px;
+  --empacts-button-padding-h: 24px;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Override Infima variables with EMPACTS colors */
+:root {
+  --ifm-color-primary: var(--empacts-primary);
+  --ifm-color-primary-dark: #7a00d9;
+  --ifm-color-primary-darker: #6b00c4;
+  --ifm-color-primary-darkest: #5a00a8;
+  --ifm-color-primary-light: #a833ff;
+  --ifm-color-primary-lighter: #b366ff;
+  --ifm-color-primary-lightest: #c699ff;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(146, 0, 254, 0.1);
+  
+  /* Typography */
+  --ifm-font-family-base: var(--empacts-font-family);
+  --ifm-heading-font-weight: var(--empacts-heading-weight);
+  --ifm-font-weight-semibold: var(--empacts-button-weight);
+  
+  /* Background colors */
+  --ifm-background-color: var(--empacts-white);
+  --ifm-background-surface-color: var(--empacts-bg-gray);
+  
+  /* Text colors */
+  --ifm-color-content: var(--empacts-text-primary);
+  --ifm-color-content-secondary: var(--empacts-text-secondary);
+  
+  /* Border colors */
+  --ifm-color-emphasis-300: var(--empacts-input-border);
+  
+  /* Card and component colors */
+  --ifm-card-background-color: var(--empacts-white);
+  --ifm-toc-border-color: var(--empacts-input-border);
+  --ifm-navbar-background-color: var(--empacts-white);
+  --ifm-footer-background-color: #2d2d2d;
+}
+
+/* Dark mode overrides - Improved for better readability */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: var(--empacts-primary);
+  --ifm-color-primary-dark: #7a00d9;
+  --ifm-color-primary-darker: #6b00c4;
+  --ifm-color-primary-darkest: #5a00a8;
+  --ifm-color-primary-light: #a833ff;
+  --ifm-color-primary-lighter: #b366ff;
+  --ifm-color-primary-lightest: #c699ff;
+  --docusaurus-highlighted-code-line-bg: rgba(146, 0, 254, 0.2);
+  
+  /* Dark mode background - Improved contrast */
+  --ifm-background-color: #0a0a0a;
+  --ifm-background-surface-color: #1a1a1a;
+  --ifm-card-background-color: #1a1a1a;
+  
+  /* Dark mode text - Better contrast */
+  --ifm-color-content: #ffffff;
+  --ifm-color-content-secondary: #e0e0e0;
+  
+  /* Dark mode borders and components */
+  --ifm-color-emphasis-300: #333333;
+  --ifm-toc-border-color: #333333;
+  --ifm-navbar-background-color: #1a1a1a;
+  --ifm-footer-background-color: #0a0a0a;
+  
+  /* Dark mode sidebar */
+  --ifm-sidebar-background-color: #1a1a1a;
+  --ifm-sidebar-color: #ffffff;
+  
+  /* Dark mode code blocks */
+  --ifm-code-background: #2a2a2a;
+  --ifm-pre-background: #2a2a2a;
+  
+  /* Dark mode table */
+  --ifm-table-head-background: #2a2a2a;
+  --ifm-table-stripe-background: #1f1f1f;
+}
+
+/* Global typography */
+body {
+  font-family: var(--empacts-font-family);
+  font-weight: var(--empacts-body-weight);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--empacts-heading-weight);
+  color: var(--empacts-text-primary);
+}
+
+[data-theme='dark'] h1, 
+[data-theme='dark'] h2, 
+[data-theme='dark'] h3, 
+[data-theme='dark'] h4, 
+[data-theme='dark'] h5, 
+[data-theme='dark'] h6 {
+  color: #ffffff;
+}
+
+/* Button styling */
+.button {
+  font-weight: var(--empacts-button-weight);
+  padding: var(--empacts-button-padding-v) var(--empacts-button-padding-h);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+/* Form elements */
+input, textarea, select {
+  border: 1px solid var(--empacts-input-border);
+  border-radius: 6px;
+  padding: 12px;
+  font-family: var(--empacts-font-family);
+}
+
+[data-theme='dark'] input,
+[data-theme='dark'] textarea,
+[data-theme='dark'] select {
+  background-color: #2a2a2a;
+  border-color: #444444;
+  color: #ffffff;
+}
+
+/* Navigation styling */
+.navbar {
+  background-color: var(--empacts-white);
+  border-bottom: 1px solid var(--empacts-input-border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .navbar {
+  background-color: #1a1a1a;
+  border-bottom-color: #333333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar__title {
+  font-weight: var(--empacts-heading-weight);
+  color: var(--empacts-text-primary);
+}
+
+[data-theme='dark'] .navbar__title {
+  color: #ffffff;
+}
+
+/* Sidebar styling */
+.theme-doc-sidebar-container {
+  background-color: var(--empacts-bg-gray);
+}
+
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background-color: #1a1a1a;
+}
+
+/* Card styling */
+.card {
+  border: 1px solid var(--empacts-input-border);
+  border-radius: 8px;
+  background-color: var(--empacts-white);
+  transition: all 0.2s ease;
+}
+
+[data-theme='dark'] .card {
+  background-color: #1a1a1a;
+  border-color: #333333;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(146, 0, 254, 0.1);
+  transform: translateY(-2px);
+}
+
+[data-theme='dark'] .card:hover {
+  box-shadow: 0 4px 12px rgba(146, 0, 254, 0.2);
+}
+
+/* Mermaid diagram styling */
+.mermaid {
+  background-color: var(--empacts-white);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  border: 1px solid var(--empacts-input-border);
+}
+
+[data-theme='dark'] .mermaid {
+  background-color: #2a2a2a;
+  border-color: #444444;
+}
+
+/* Code block styling */
+.prism-code {
+  border-radius: 6px;
+  border: 1px solid var(--empacts-input-border);
+}
+
+[data-theme='dark'] .prism-code {
+  border-color: #444444;
+}
+
+/* Tag styling for technical docs */
+.tag {
+  background-color: var(--empacts-primary);
+  color: var(--empacts-white);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: var(--empacts-button-weight);
+  margin-right: 8px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+/* Related docs links */
+.related-docs {
+  background-color: var(--empacts-bg-gray);
+  border-radius: 8px;
+  padding: var(--empacts-section-padding);
+  margin: var(--empacts-section-padding) 0;
+}
+
+[data-theme='dark'] .related-docs {
+  background-color: #2a2a2a;
+}
+
+.related-docs h3 {
+  margin-top: 0;
+  color: var(--empacts-text-primary);
+}
+
+[data-theme='dark'] .related-docs h3 {
+  color: #ffffff;
+}
+
+.related-docs ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.related-docs li {
+  margin-bottom: var(--empacts-form-gap);
+}
+
+.related-docs a {
+  color: var(--empacts-primary);
+  text-decoration: none;
+  font-weight: var(--empacts-button-weight);
+}
+
+.related-docs a:hover {
+  text-decoration: underline;
+}
+
+/* Improved dark mode for specific components */
+[data-theme='dark'] .theme-doc-sidebar-menu {
+  background-color: #1a1a1a;
+}
+
+[data-theme='dark'] .theme-doc-sidebar-item-category-level-1 > .theme-doc-sidebar-item-link {
+  color: #ffffff;
+}
+
+[data-theme='dark'] .theme-doc-sidebar-item-category-level-1 > .theme-doc-sidebar-item-link:hover {
+  background-color: #2a2a2a;
+}
+
+[data-theme='dark'] .theme-doc-sidebar-item-category-level-2 > .theme-doc-sidebar-item-link {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .theme-doc-sidebar-item-category-level-2 > .theme-doc-sidebar-item-link:hover {
+  background-color: #2a2a2a;
+}
+
+/* Table improvements for dark mode */
+[data-theme='dark'] table {
+  background-color: #1a1a1a;
+}
+
+[data-theme='dark'] table th {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border-color: #444444;
+}
+
+[data-theme='dark'] table td {
+  border-color: #444444;
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] table tr:nth-child(even) {
+  background-color: #1f1f1f;
+}
+
+/* Footer improvements */
+[data-theme='dark'] .footer {
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .footer__title {
+  color: #ffffff;
+}
+
+[data-theme='dark'] .footer__link-item {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .footer__link-item:hover {
+  color: var(--empacts-primary);
+}
+
+/* Search improvements */
+[data-theme='dark'] .navbar__search-input {
+  background-color: #2a2a2a;
+  border-color: #444444;
+  color: #ffffff;
+}
+
+[data-theme='dark'] .navbar__search-input::placeholder {
+  color: #888888;
+}
+
+/* Breadcrumb improvements */
+[data-theme='dark'] .breadcrumbs__item {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .breadcrumbs__link {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .breadcrumbs__link:hover {
+  color: var(--empacts-primary);
+}
+
+/* Pagination improvements */
+[data-theme='dark'] .pagination-nav__link {
+  background-color: #1a1a1a;
+  border-color: #444444;
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .pagination-nav__link:hover {
+  background-color: #2a2a2a;
+  border-color: var(--empacts-primary);
+}
+
+/* TOC improvements */
+[data-theme='dark'] .table-of-contents__link {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .table-of-contents__link:hover {
+  color: var(--empacts-primary);
+}
+
+[data-theme='dark'] .table-of-contents__link--active {
+  color: var(--empacts-primary);
+  background-color: rgba(146, 0, 254, 0.1);
+}
+
+/* Admonition improvements */
+[data-theme='dark'] .admonition {
+  background-color: #2a2a2a;
+  border-color: #444444;
+}
+
+[data-theme='dark'] .admonition-heading {
+  color: #ffffff;
+}
+
+[data-theme='dark'] .admonition-content {
+  color: #e0e0e0;
+}
+
+/* Image improvements for dark mode */
+[data-theme='dark'] img {
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* Link improvements */
+[data-theme='dark'] a {
+  color: var(--empacts-primary);
+}
+
+[data-theme='dark'] a:hover {
+  color: #a833ff;
+}
+
+/* Inline code improvements */
+[data-theme='dark'] code {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #444444;
+}
+
+/* Blockquote improvements */
+[data-theme='dark'] blockquote {
+  background-color: #2a2a2a;
+  border-left-color: var(--empacts-primary);
+  color: #e0e0e0;
+}
+
+/* HR improvements */
+[data-theme='dark'] hr {
+  border-color: #444444;
+}
+
+/* List improvements */
+[data-theme='dark'] ul, 
+[data-theme='dark'] ol {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] li {
+  color: #e0e0e0;
+}
+
+/* Strong and emphasis improvements */
+[data-theme='dark'] strong {
+  color: #ffffff;
+}
+
+[data-theme='dark'] em {
+  color: #e0e0e0;
 }

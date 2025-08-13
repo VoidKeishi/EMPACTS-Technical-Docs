@@ -4,32 +4,32 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'System Architecture',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Comprehensive system architecture documentation with Mermaid.js diagrams
+        showing our startup-mentor connection platform design and data flow.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'API Reference',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Complete API documentation with authentication, endpoints, SDK examples,
+        and integration guides for developers building on our platform.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Development Guidelines',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Coding standards, best practices, testing strategies, and security
+        guidelines to maintain high-quality code across our development team.
       </>
     ),
   },

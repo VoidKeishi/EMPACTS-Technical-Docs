@@ -1,0 +1,106 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: 'content: create {{collection}} "{{slug}}"'
+    update: 'content: update {{collection}} "{{slug}}"'
+    delete: 'content: delete {{collection}} "{{slug}}"'
+    uploadMedia: 'media: upload {{path}}'
+    deleteMedia: 'media: delete {{path}}'
+
+local_backend: true
+
+media_folder: "static/img"
+public_folder: "/img"
+
+collections:
+  - name: "docs"
+    label: "Documentation"
+    folder: "docs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "docs"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Sidebar Position", name: "sidebar_position", widget: "number", default: 1}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Related Documents", name: "related_docs", widget: "list", required: false, fields: [{label: "Document", name: "doc", widget: "string"}]}
+
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Author", name: "author", widget: "string", default: "EMPACTS Team"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "pages"
+    label: "Pages"
+    folder: "src/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "authors"
+    label: "Authors"
+    folder: "blog/authors"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Email", name: "email", widget: "string", required: false}
+      - {label: "Bio", name: "bio", widget: "text", required: false}
+      - {label: "Avatar", name: "avatar", widget: "image", required: false}
+      - {label: "Social Links", name: "social", widget: "object", required: false, fields: [
+          {label: "GitHub", name: "github", widget: "string", required: false},
+          {label: "LinkedIn", name: "linkedin", widget: "string", required: false},
+          {label: "Twitter", name: "twitter", widget: "string", required: false}
+        ]}
+
+  - name: "tags"
+    label: "Tags"
+    folder: "blog/tags"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Color", name: "color", widget: "string", default: "#9200FE"}
+
+# Custom widgets for better content management
+widgets:
+  - name: "mermaid"
+    label: "Mermaid Diagram"
+    widget: "object"
+    fields:
+      - {label: "Diagram Type", name: "type", widget: "select", options: ["graph", "flowchart", "sequenceDiagram", "classDiagram", "stateDiagram", "gantt", "pie", "journey"]}
+      - {label: "Direction", name: "direction", widget: "select", options: ["TB", "TD", "BT", "RL", "LR"], required: false}
+      - {label: "Diagram Code", name: "code", widget: "text"}
+
+  - name: "code-block"
+    label: "Code Block"
+    widget: "object"
+    fields:
+      - {label: "Language", name: "language", widget: "select", options: ["javascript", "typescript", "python", "bash", "sql", "yaml", "json", "html", "css"]}
+      - {label: "Code", name: "code", widget: "text"}
+      - {label: "Title", name: "title", widget: "string", required: false}
+
+# Editor configuration
+editor:
+  preview: true
+  show_preview_links: true
+
+# Display options
+display_url: https://empacts.org/docs

@@ -2,46 +2,58 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Welcome to EMPACTS Technical Documentation
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Welcome to the technical documentation for the EMPACTS development team. This platform serves as a central hub for all technical notes, architecture decisions, and development guidelines for our startup-mentor connection platform.
 
-## Getting Started
+## About EMPACTS
 
-Get started by **creating a new site**.
+EMPACTS is a youth organization dedicated to helping SDG (Sustainable Development Goals) startups in Vietnam grow and succeed. Our development team focuses on building innovative platforms that connect startups with mentors, fostering collaboration and knowledge sharing.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## What You'll Find Here
 
-### What you'll need
+This documentation covers:
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+- **Architecture Overview** - System design and technical decisions
+- **API Reference** - Complete API documentation
+- **Development Guidelines** - Coding standards and best practices
+- **Deployment Guides** - How to deploy and maintain our platforms
+- **Troubleshooting** - Common issues and solutions
 
-## Generate a new site
+## Quick Start
 
-Generate a new Docusaurus site using the **classic template**.
+1. **Browse Documentation** - Use the sidebar to navigate through different sections
+2. **Search** - Use the search bar to find specific topics
+3. **Tags** - Each document is tagged for easy categorization
+4. **Related Links** - Find connected documentation at the bottom of each page
 
-The classic template will automatically be added to your project after you run the command:
+## Platform Features
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+Our technical documentation platform includes:
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+- **Mermaid.js Diagrams** - Visual representation of system architecture
+- **Code Examples** - Practical implementation examples
+- **Tag System** - Easy categorization and discovery
+- **Related Documents** - Cross-references between related topics
+- **Search Functionality** - Quick access to any topic
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+## Getting Help
 
-## Start your site
+If you need assistance with the documentation or have questions:
 
-Run the development server:
+- Check the troubleshooting section
+- Review related documents linked at the bottom of each page
+- Contact the development team through our internal channels
 
-```bash
-cd my-website
-npm run start
-```
+## Contributing
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+To contribute to this documentation:
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+1. Follow our documentation standards
+2. Use appropriate tags for categorization
+3. Include relevant diagrams when explaining complex concepts
+4. Link to related documents to maintain connectivity
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+---
+
+**Ready to explore?** Start with our [Architecture Overview](./architecture/overview) or browse the sidebar for specific topics.
